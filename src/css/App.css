@@ -17,7 +17,7 @@
 .cardForm input[type="text"] {
   height: 28px;
   margin: 6px 0;
-  text-align: center;
+  /* text-align: center; */
   border: 1px solid #dddddd;
   font-size: 18px;
 }

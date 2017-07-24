@@ -13,10 +13,12 @@ class App extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.saveCards = this.saveCards.bind(this);
+    this.focus = this.focus.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
+    this.focus();
     try {
       var card = new ClozeCard(this.state.fullText, this.state.clozeText);
     } catch (e) {
@@ -54,6 +56,10 @@ class App extends Component {
     });
   }
 
+  focus() {
+    this.textInput.focus();
+  }
+
   render() {
     return (
       <div className="App">
@@ -64,6 +70,9 @@ class App extends Component {
             name="fullText"
             value={this.state.fullText}
             onChange={this.handleInputChange}
+            ref={input => {
+              this.textInput = input;
+            }}
             placeholder="Enter the full text"
           />
           <input

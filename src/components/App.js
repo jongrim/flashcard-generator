@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../images/logo.svg';
 import '../css/App.css';
 import ClozeCard from '../js/ClozeCard';
 import CardList from './CardList';
@@ -21,10 +20,14 @@ class App extends Component {
       var card = new ClozeCard(this.state.fullText, this.state.clozeText);
     } catch (e) {
       console.error(e.message);
+      alert('Invalid cloze!');
+      return;
     }
     this.setState(prevState => {
       return {
-        cards: prevState.cards.concat([card])
+        cards: prevState.cards.concat([card]),
+        fullText: '',
+        clozeText: ''
       };
     });
   }
@@ -42,21 +45,24 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <input
-          type="text"
-          name="fullText"
-          value={this.state.fullText}
-          onChange={this.handleInputChange}
-          placeholder="Enter the full text"
-        />
-        <input
-          type="text"
-          name="clozeText"
-          value={this.state.clozeText}
-          onChange={this.handleInputChange}
-          placeholder="Enter the cloze portion"
-        />
-        <button onClick={this.handleSubmit}>Submit</button>
+        <h1>Flashcard Generator</h1>
+        <form className="cardForm">
+          <input
+            type="text"
+            name="fullText"
+            value={this.state.fullText}
+            onChange={this.handleInputChange}
+            placeholder="Enter the full text"
+          />
+          <input
+            type="text"
+            name="clozeText"
+            value={this.state.clozeText}
+            onChange={this.handleInputChange}
+            placeholder="Enter the cloze portion"
+          />
+          <input type="submit" onClick={this.handleSubmit} />
+        </form>
         {this.state.cards && <CardList cards={this.state.cards} />}
       </div>
     );

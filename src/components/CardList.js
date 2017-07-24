@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
+import '../css/CardList.css';
 
 const CardList = props => {
   return (
-    <ul>
-      {props.cards.map((card, index) => {
-        return (
-          <li>
-            <Card partial={card.partial} cloze={card.cloze} />
-          </li>
-        );
-      })}
-    </ul>
+    <div className="cardBox">
+      <ul className="cardList">
+        {props.cards.map((card, index) => {
+          return (
+            <li key={index}>
+              <Card partial={card.partial} cloze={card.cloze} />
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   );
 };
 

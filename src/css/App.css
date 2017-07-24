@@ -1,3 +1,41 @@
 .App {
   text-align: center;
 }
+
+.App h1 {
+  color: white;
+  font-weight: 200;
+}
+
+.cardForm {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  margin: 0 auto;
+}
+
+.cardForm input[type="text"] {
+  height: 28px;
+  margin: 6px 0;
+  text-align: center;
+  border: 1px solid #dddddd;
+  font-size: 18px;
+}
+
+.cardForm input[type="submit"] {
+  margin: 0 auto;
+  width: 100px;
+  font-weight: 200;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #2171a1;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+  background-color: #2171a1;
+  color: white;
+}
+
+.cardForm input[type="submit"]:active,
+.cardForm input[type="submit"]:hover {
+  background-color: #06466c;
+  cursor: pointer;
+}

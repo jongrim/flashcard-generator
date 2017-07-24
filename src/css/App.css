@@ -23,10 +23,10 @@
 }
 
 .cardForm input[type="submit"] {
-  margin: 0 auto;
+  margin: 5px;
   width: 100px;
   font-weight: 200;
-  font-size: 16px;
+  font-size: 18px;
   border-radius: 6px;
   border: 1px solid #2171a1;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
@@ -37,5 +37,25 @@
 .cardForm input[type="submit"]:active,
 .cardForm input[type="submit"]:hover {
   background-color: #06466c;
+  border-color: #06466c;
+  cursor: pointer;
+}
+
+.save {
+  margin: 5px;
+  width: 100px;
+  font-weight: 200;
+  font-size: 18px;
+  border-radius: 6px;
+  border: 1px solid #00734a;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+  background-color: #00734a;
+  color: white;
+}
+
+.save:active,
+.save:hover {
+  background-color: #003e28;
+  border-color: #003e28;
   cursor: pointer;
 }

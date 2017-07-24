@@ -7,11 +7,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cards: []
+      cards: this.loadCards(JSON.parse(localStorage.getItem('cards'))) || []
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.saveCards = this.saveCards.bind(this);
   }
 
   handleSubmit(e) {
@@ -42,6 +43,17 @@ class App extends Component {
     });
   }
 
+  saveCards(e) {
+    e.preventDefault();
+    localStorage.setItem('cards', JSON.stringify(this.state.cards));
+  }
+
+  loadCards(arr) {
+    return arr.map(obj => {
+      return new ClozeCard(obj.text, obj.cloze);
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -61,7 +73,13 @@ class App extends Component {
             onChange={this.handleInputChange}
             placeholder="Enter the cloze portion"
           />
-          <input type="submit" onClick={this.handleSubmit} />
+          <div>
+            <input type="submit" onClick={this.handleSubmit} />
+            {this.state.cards.length > 0 &&
+              <button className="save" onClick={this.saveCards}>
+                Save
+              </button>}
+          </div>
         </form>
         {this.state.cards && <CardList cards={this.state.cards} />}
       </div>

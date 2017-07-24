@@ -17,7 +17,7 @@
 .cardForm input[type="text"] {
   height: 28px;
   margin: 6px 0;
-  /* text-align: center; */
+  padding: 0 0 0 6px;
   border: 1px solid #dddddd;
   font-size: 18px;
 }
@@ -58,4 +58,58 @@
   background-color: #003e28;
   border-color: #003e28;
   cursor: pointer;
+}
+
+.clear {
+  margin: 5px;
+  width: 100px;
+  font-weight: 200;
+  font-size: 18px;
+  border-radius: 6px;
+  border: 1px solid #e9a23b;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+  background-color: #e9a23b;
+  color: white;
+}
+
+.claer:active,
+.clear:hover {
+  background-color: #cf8110;
+  border-color: #cf8110;
+  cursor: pointer;
+}
+
+.help {
+  margin: 5px;
+  width: 100px;
+  font-weight: 200;
+  font-size: 18px;
+  border-radius: 6px;
+  border: 1px solid #bd0f3b;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+  background-color: #bd0f3b;
+  color: white;
+}
+
+.help:active,
+.help:hover {
+  background-color: #7d001f;
+  border-color: #7d001f;
+  cursor: pointer;
+}
+
+.helpCard {
+  width: 70vw;
+  margin: 20px auto;
+  padding: 0 12px;
+  font-weight: 200;
+  color: #333333;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.helpCard h3 {
+  font-weight: 200;
+  color: #333333;
 }

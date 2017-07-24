@@ -23,17 +23,19 @@ class Card extends Component {
     this.state = {
       partial: props.partial,
       cloze: props.cloze,
-      display: props.partial
+      display: props.partial,
+      frontVisible: true,
+      helpText: '(click to see answer)'
     };
 
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
-    if (this.state.display === this.state.partial) {
-      this.setState({ display: this.state.cloze });
+    if (this.state.frontVisible) {
+      this.setState({ display: this.state.cloze, frontVisible: false });
     } else {
-      this.setState({ display: this.state.partial });
+      this.setState({ display: this.state.partial, frontVisible: true });
     }
   }
 
@@ -43,6 +45,10 @@ class Card extends Component {
         <p>
           {this.state.display}
         </p>
+        {!!this.state.frontVisible &&
+          <p className="helpText">
+            {this.state.helpText}
+          </p>}
       </div>
     );
   }

@@ -51,6 +51,7 @@ class App extends Component {
   saveCards(e) {
     e.preventDefault();
     localStorage.setItem('cards', JSON.stringify(this.state.cards));
+    alert('Cards saved!');
   }
 
   loadCards(arr) {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../css/App.css';
-import ClozeCard from '../js/ClozeCard';
 import CardList from './CardList';
+const ClozeCard = require('../js/ClozeCard');
 
 class App extends Component {
   constructor(props) {

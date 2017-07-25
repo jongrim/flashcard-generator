@@ -1,4 +1,4 @@
-export default class ClozeCard {
+class ClozeCard {
   constructor(text, cloze) {
     this.text = text;
     this.cloze = cloze;
@@ -8,3 +8,6 @@ export default class ClozeCard {
     }
   }
 }
+
+// Use exports object for Node
+module.exports = ClozeCard;
